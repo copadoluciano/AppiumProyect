@@ -25,22 +25,6 @@ public class LogoutCasasco {
 	public void pasosLoginCasasco(Datasources data, Reports report, Repo_Template repo, DriverManager DM, int iteration, String name) throws InterruptedException {
 		driver = DM.getActualDriver();
 
-		
-		// Logout
-		report.AddLine("Vamos a Inicio");
-		report.Screenshot(name);
-		repo.get_btn_menu().click();
-		Thread.sleep(4000);
-			
-		report.AddLine("Apretamos Salir");
-		report.Screenshot(name);
-		repo.get_btn_salir().click();
-		Thread.sleep(4000);
-			
-		report.AddLine("Seleccionamos la cuenta a desconectar");
-		report.Screenshot(name);
-		repo.get_btn_pick_account().click();
-		Thread.sleep(4000);
 	
 	
 	}

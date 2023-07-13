@@ -22,7 +22,15 @@ public class Repo_Template {
 	    driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);	
 	}
 	//
-		
+	public WebElement search() {
+		return driver.findElement(By.xpath("//*[@class='android.widget.EditText']"));
+	}
+	public WebElement btn_Categories() {
+		return driver.findElement(By.xpath("//android.widget.Button[@content-desc=\"Categorías, tab, 2 of 4\"]/android.widget.TextView"));
+	}
+	
+	
+	
 	//Login
 	public WebElement get_btn_cuenta() {
 		return driver.findElement(By.xpath("//android.widget.Button[@content-desc='Cuenta, tab, 4 of 4']/android.widget.TextView[1]"));
@@ -128,6 +136,9 @@ public class Repo_Template {
 	}
 	public WebElement get_btn_cumple_validacion() {
 		return driver.findElement(By.xpath("//*[contains(@text, 'MATIAS')]"));
+	}
+	public WebElement get_btn_prox_cumple() {
+		return driver.findElement(By.xpath("//*[contains(@text, 'PRÓXIMOS CUMPLEAÑOS')]"));
 	}
 	
 	// Aniversarios

@@ -21,16 +21,17 @@ import io.appium.java_client.android.Activity;
 import io.appium.java_client.android.AndroidDriver;
 
 public class HoraUltimaConexion {
-	WebDriver driver;
+	AndroidDriver driver;
 	
 	public void pasosHoraUltimaConexion(Datasources data, Reports report, Repo_Template repo, DriverManager DM, int iteration, String name) throws InterruptedException {
-		driver = DM.getActualDriver();
+		driver = (AndroidDriver) DM.getActualDriver();
+		
 		
 		Thread.sleep(2000);
 		report.AddLine("Validamos el cartel 'Sin conexión' ");
 		repo.get_pop_sinConexion().isDisplayed();
 		report.Screenshot(name);
-//		repo.get_pop_continuar().click();
+		repo.get_pop_continuar().click();
 		
 	
 	

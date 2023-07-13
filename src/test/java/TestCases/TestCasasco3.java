@@ -70,6 +70,7 @@ public class TestCasasco3 {
 		
 			pLoginCasasco.pasosLoginCasasco(data, report, repo, DM, iteration, name);
 			driver.closeApp();
+			driver.toggleWifi(); 
 			Thread.sleep(8000);
 			driver.launchApp();
 			pHoraUltimaConexion.pasosHoraUltimaConexion(data, report, repo, DM, iteration, name);
@@ -77,10 +78,10 @@ public class TestCasasco3 {
 				
 		
 			//ADD VALIDATIONS AT THE END
-			report.AddLine("Validamos que este visible el cartel 'Sin Conexión'");
-			WebDriverWait waitFor = new WebDriverWait(driver, 15);
-			result = report.validateObjectIsDisplayable(repo.get_pop_sinConexion());
-			report.Screenshot(name);
+//			report.AddLine("Validamos que este visible el cartel 'Sin Conexión'");
+//			WebDriverWait waitFor = new WebDriverWait(driver, 15);
+//			result = report.validateObjectIsDisplayable(repo.get_pop_sinConexion());
+//			report.Screenshot(name);
 			
 			
 			

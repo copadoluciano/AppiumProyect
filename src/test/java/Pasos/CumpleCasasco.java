@@ -35,11 +35,9 @@ public class CumpleCasasco {
 		
 		Thread.sleep(2000);
 		report.AddLine("Hacemos click en "+ocasion);
-//		report.AddLine("Validamos banner "+ocasion);
-//		repo.get_img_cumple().isDisplayed();
 		report.AddLine("----------------------------");
 		report.AddLine("Validamos "+ocasion+" del día");
-	
+				
 		
 		repo.get_btn_cumple_validacion().isDisplayed();
 		Thread.sleep(2000);

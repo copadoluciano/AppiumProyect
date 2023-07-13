@@ -26,47 +26,13 @@ public class LoginCasasco {
 		driver = DM.getActualDriver();
 		
 		//Inicio
-				
-		report.AddLine("Iniciamos la app");
+		report.AddLine("Escribimos en el buscador");
 		report.Screenshot(name);
+		repo.search().sendKeys("ello2222");
 		
-		report.AddLine("Accedemos a Cuenta con 365");
+		report.AddLine("Click en categorias");
 		report.Screenshot(name);
-		repo.get_btn_365().click();
-		try {
-			//Login sin cache
-			repo.get_btn_email();
-			report.AddLine("Ingresamos correo");
-			report.Screenshot(name);
-			repo.get_btn_email().sendKeys("mobiletest@casasco.com.ar");;
-			repo.get_btn_siguiente().click();
-			
-			report.AddLine("Ingresamos el Password");
-			report.Screenshot(name);
-			repo.get_btn_password().sendKeys("boyA8371#");
-			repo.get_btn_siguiente().click();
-			
-			
-		} catch(Exception e) {
-			//Login con cache
-			report.AddLine("Elegimos la cuenta");
-			report.Screenshot(name);
-			repo.get_btn_pick_account().click();
-			
-			report.AddLine("Ingresamos el Password");
-			report.Screenshot(name);
-			repo.get_btn_pick_password().sendKeys("boyA8371#");
-			
-			try {
-			    repo.get_btn_pick_pick_password().click();
-			    Thread.sleep(2000);
-	
-			} catch(Exception i) {
-			}
-			repo.get_btn_pick_login().click();
-			
-			}
-		Thread.sleep(57000);
+		repo.btn_Categories().click();
 
 		
 	

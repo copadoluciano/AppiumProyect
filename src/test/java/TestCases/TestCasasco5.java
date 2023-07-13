@@ -18,6 +18,7 @@ import CentaJava.Core.Reports;
 import Pasos.CumpleCasasco;
 import Pasos.HoraActual;
 import Pasos.HoraUltimaConexion;
+import Pasos.ProxCumpleCasasco;
 import Pasos.Generales.LoginCasasco;
 import Pasos.Generales.LogoutCasasco;
 import Repositories.Repo_Template;
@@ -57,7 +58,8 @@ public class TestCasasco5 {
 			
 			//SET THE REPOSITORIES TO USE
 			LoginCasasco pLoginCasasco = new LoginCasasco();
-			CumpleCasasco pCumpleCasasco = new CumpleCasasco();
+			ProxCumpleCasasco pProxCumpleCasasco = new ProxCumpleCasasco();
+			
 			LogoutCasasco pLogoutCasasco = new LogoutCasasco();
 			
 		
@@ -69,7 +71,8 @@ public class TestCasasco5 {
 						
 			//Pasos 		
 			pLoginCasasco.pasosLoginCasasco(data, report, repo, DM, iteration, name);
-			pCumpleCasasco.pasosCumpleCasasco(data, report, repo, DM, iteration, name, "Cumpleaños");
+			
+			pProxCumpleCasasco.pasosProxCumpleCasasco(data, report, repo, DM, iteration, name, "hola");
 //			pLogoutCasasco.pasosLoginCasasco(data, report, repo, DM, iteration, name);	
 		 
 			//ADD VALIDATIONS AT THE END

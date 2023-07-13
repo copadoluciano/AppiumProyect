@@ -20,7 +20,7 @@ import Pasos.Generales.LoginCasasco;
 import Pasos.Generales.LogoutCasasco;
 import Repositories.Repo_Template;
 import io.appium.java_client.android.AndroidDriver;
-import io.appium.java_client.android.AndroidElement;
+
 
  
 public class TestCasasco1 {
@@ -33,17 +33,14 @@ public class TestCasasco1 {
 		try {			
 			System.out.println("Configuring");
 			
-			AndroidDriver<AndroidElement> driver;
+			AndroidDriver driver;
 			//Definir capabilities segun versión android y app
 			DesiredCapabilities capabilities = new DesiredCapabilities();
-//			capabilities.setCapability("deviceName", "NYC");
-//			capabilities.setCapability("udid", "emulator-5554");
-			capabilities.setCapability("udid", "1164227322");
-			capabilities.setCapability("platformName", "Android");
-//			capabilities.setCapability("platformVersion", "7.1.1");
-			capabilities.setCapability("appActivity", "com.artech.activities.StartupActivity");
-			capabilities.setCapability("appPackage", "com.casasco.casascoapp");
-			capabilities.setCapability("automationName", "UiAutomator1");
+//			capabilities.setCapability("platformName", "Android");
+			capabilities.setCapability("platformVersion", "13");
+			capabilities.setCapability("appActivity", "com.nantes.app.MainActivity");
+			capabilities.setCapability("appPackage", "com.nantes.app");
+			capabilities.setCapability("automationName", "UiAutomator2");
 			
 			
 			//SET THE SERVER
@@ -63,15 +60,16 @@ public class TestCasasco1 {
 			
 			System.out.println("Initializating test");
 						
-			//Pasos 		
+			//Pasos 	
+			Thread.sleep(5000);
 			pLoginCasasco.pasosLoginCasasco(data, report, repo, DM, iteration, name);
 			pLogoutCasasco.pasosLoginCasasco(data, report, repo, DM, iteration, name);	
 				
 		
 			//ADD VALIDATIONS AT THE END
 			report.AddLine("Validamos que se haya cerrado la sesión");
-			WebDriverWait waitFor = new WebDriverWait(driver, 15);
-			result = report.validateObjectIsDisplayable(repo.get_btn_validar());
+
+			//result = report.validateObjectIsDisplayable(repo.get_btn_validar());
 			report.Screenshot(name);
 			
 			
